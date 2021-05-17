@@ -72,4 +72,8 @@ When given a dataset of single family home information, I decided to approach th
 
 ## Conclusion
 
-The goal with this project was to find the answer the question 
+<br> The goal with this project was to find the answer the question "How much house can you get for your money?". While the initial data pointed towards successfully answering that question, after adding more features, the data took us further and further from that goal.
+
+<br>In the future, I would better test and adjust for multicollinearity. Also I would probably start with a different hypothesis. I believe I got caught up in sticking to my initial thought and not adjusting when the data didn't point the way I wanted.
+
+<br> Even though this was ulimately a failure, it was a great learning opportunity. 
