@@ -56,7 +56,7 @@ When given a dataset of single family home information, I decided to approach th
 #### Running the Model: How much house can you get for your money?
 
 <br>Now that the independent variable is more normal, it's time to rerun the model. 
-<br>This looks better. What the model is saying is that we can explain 31% of the variance in the model, and that for every 1% increase in price, there is a 12.35 increase in square footage. 
+<br>This looks better. What the model is saying is that we can explain 31% of the target variance in the model, and that for every 1 unit increase of square footage, the price of the home will increase by 0.04%.  
 
 #### Testing Linearity
 <br> After running a rainbow test to determine if the model violates the linearity assumption, it's determined that the model violates the linearity assumption. 
@@ -65,15 +65,17 @@ When given a dataset of single family home information, I decided to approach th
 <br> Visually inspecting, it the model looks like there is homoscedasticity.
 
 #### Running the model a second time
-<br> After adding 'grade' to the model, the model now reads that we can explain 39% of the variance. We have now received an warning that there may be strong multicollinearity with our data. 
+<br> After getting dummy variables for "grade" in order to add categorical features to the model, it's time to run the model. Every "grade" feature has been deemed statistically insignificant, as well as the r-squared and coefficient for square footage have gone down. 
 
 #### Running the model a third time
-<br> After adding the final dataset of "bathrooms", the r-squared has barely gone up and the 'bathrooms' have returned a negative coefficient. And after running the Variance Inflation Factor test, it has returned numbers greater than 5, which strongly suggest that there is multicolinearity.
+<br> After getting dummies for and adding the final dataset of "bathrooms", the r-squared has returned to 31%, the square footage coefficient has returned to 0.04%. Looking at the coefficient of the various bathroom values, they are all relatively the same. 
+<be> This, the return of the original coefficient/ r-squared from the square foot only model, plus the strong warning of the probability of multicollinearity proves that this model is also a failure. 
 
 ## Conclusion
 
-<br> The goal with this project was to find the answer the question "How much house can you get for your money?". While the initial data pointed towards successfully answering that question, after adding more features, the data took us further and further from that goal.
-
+<br> The goal with this project was to find the answer the question "How much house can you get for your money?". Of the three models that were ran, the first model that explained 31% of the target variance, that stated for every one unit increase in square footage, there is a 0.04% increase in price. 
+<be> Introducing other features either were deemed statistically insignificant (grade) or strongly multicollinear (bathrooms). At the end of the day, the best model that was ran was the first. 
 <br>In the future, I would better test and adjust for multicollinearity. Also I would probably start with a different hypothesis. I believe I got caught up in sticking to my initial thought and not adjusting when the data didn't point the way I wanted.
 
-<br> Even though this was ulimately a failure, it was a great learning opportunity. 
+<br> With further time on this project, I would explored more features that were initially dismissed as there good have been more linear features in the ones dropped initially. 
+<br> Furthermore, I would transform the categorical features further to help them fit better into the model. 
